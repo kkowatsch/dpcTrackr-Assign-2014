@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3727C326-B4EE-46F7-A299-643E4070D8FF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dpcTrackr</RootNamespace>
+    <AssemblyName>dpcTrackr</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="NBDModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NBDModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="App_Data\users.mdf" />
+    <Content Include="App_Data\users_log.ldf">
+      <DependentUpon>users.mdf</DependentUpon>
+    </Content>
+    <Content Include="icons\add189.png" />
+    <Content Include="icons\address19.png" />
+    <Content Include="icons\alarm52.png" />
+    <Content Include="icons\basic14.png" />
+    <Content Include="icons\basic15.png" />
+    <Content Include="icons\basic16.png" />
+    <Content Include="icons\basic17.png" />
+    <Content Include="icons\black403.png" />
+    <Content Include="icons\black406.png" />
+    <Content Include="icons\black407.png" />
+    <Content Include="icons\blank38.png" />
+    <Content Include="icons\book209.png" />
+    <Content Include="icons\bookmark49.png" />
+    <Content Include="icons\broken45.png" />
+    <Content Include="icons\calculator70.png" />
+    <Content Include="icons\calendar159.png" />
+    <Content Include="icons\center13.png" />
+    <Content Include="icons\clasic.png" />
+    <Content Include="icons\delete82.png" />
+    <Content Include="icons\delete85.png" />
+    <Content Include="icons\document162.png" />
+    <Content Include="icons\dollar178.png" />
+    <Content Include="icons\done.png" />
+    <Content Include="icons\door24.png" />
+    <Content Include="icons\down123.png" />
+    <Content Include="icons\down124.png" />
+    <Content Include="icons\download168.png" />
+    <Content Include="icons\expand42.png" />
+    <Content Include="icons\expand43.png" />
+    <Content Include="icons\eye106.png" />
+    <Content Include="icons\file96.png" />
+    <Content Include="icons\file99.png" />
+    <Content Include="icons\film63.png" />
+    <Content Include="icons\hanging15.png" />
+    <Content Include="icons\heart295.png" />
+    <Content Include="icons\heart297.png" />
+    <Content Include="icons\home150.png" />
+    <Content Include="icons\home153.png" />
+    <Content Include="icons\info22.png" />
+    <Content Include="icons\left arrow.png" />
+    <Content Include="icons\left224.png" />
+    <Content Include="icons\left225.png" />
+    <Content Include="icons\leftarrow.png" />
+    <Content Include="icons\link61.png" />
+    <Content Include="icons\list90.png" />
+    <Content Include="icons\location44.png" />
+    <Content Include="icons\locked59.png" />
+    <Content Include="icons\locked61.png" />
+    <Content Include="icons\logout13.png" />
+    <Content Include="icons\mail80.png" />
+    <Content Include="icons\male226.png" />
+    <Content Include="icons\music235.png" />
+    <Content Include="icons\musical116.png" />
+    <Content Include="icons\navigation12.png" />
+    <Content Include="icons\new104.png" />
+    <Content Include="icons\old63.png" />
+    <Content Include="icons\pause46.png" />
+    <Content Include="icons\planet30.png" />
+    <Content Include="icons\plus24.png" />
+    <Content Include="icons\print42.png" />
+    <Content Include="icons\print43.png" />
+    <Content Include="icons\print45.png" />
+    <Content Include="icons\puzzle38.png" />
+    <Content Include="icons\refresh57.png" />
+    <Content Include="icons\refresh62.png" />
+    <Content Include="icons\remove22.png" />
+    <Content Include="icons\return10.png" />
+    <Content Include="icons\returning7.png" />
+    <Content Include="icons\right arrow.png" />
+    <Content Include="icons\right245.png" />
+    <Content Include="icons\right247.png" />
+    <Content Include="icons\rocket74.png" />
+    <Content Include="icons\round60.png" />
+    <Content Include="icons\round61.png" />
+    <Content Include="icons\round62.png" />
+    <Content Include="icons\round75.png" />
+    <Content Include="icons\round77.png" />
+    <Content Include="icons\share40.png" />
+    <Content Include="icons\ship11.png" />
+    <Content Include="icons\smartphone24.png" />
+    <Content Include="icons\speaker111.png" />
+    <Content Include="icons\speaker112.png" />
+    <Content Include="icons\speaker113.png" />
+    <Content Include="icons\square182.png" />
+    <Content Include="icons\star174.png" />
+    <Content Include="icons\thumbtack1.png" />
+    <Content Include="icons\unlocked44.png" />
+    <Content Include="icons\unlocked46.png" />
+    <Content Include="icons\up177.png" />
+    <Content Include="icons\warning39.png" />
+    <Content Include="icons\widescreen9.png" />
+    <Content Include="icons\window58.png" />
+    <Content Include="icons\wrench73.png" />
+    <Content Include="icons\zoom70.png" />
+    <Content Include="icons\zoom71.png" />
+    <Content Include="icons\zoom72.png" />
+    <Content Include="Landing\icons\add189.png" />
+    <Content Include="Landing\icons\address19.png" />
+    <Content Include="Landing\icons\alarm52.png" />
+    <Content Include="Landing\icons\basic14.png" />
+    <Content Include="Landing\icons\basic15.png" />
+    <Content Include="Landing\icons\basic16.png" />
+    <Content Include="Landing\icons\basic17.png" />
+    <Content Include="Landing\icons\black403.png" />
+    <Content Include="Landing\icons\black406.png" />
+    <Content Include="Landing\icons\black407.png" />
+    <Content Include="Landing\icons\blank38.png" />
+    <Content Include="Landing\icons\book209.png" />
+    <Content Include="Landing\icons\bookmark49.png" />
+    <Content Include="Landing\icons\broken45.png" />
+    <Content Include="Landing\icons\calculator70.png" />
+    <Content Include="Landing\icons\calendar159.png" />
+    <Content Include="Landing\icons\center13.png" />
+    <Content Include="Landing\icons\clasic.png" />
+    <Content Include="Landing\icons\delete82.png" />
+    <Content Include="Landing\icons\delete85.png" />
+    <Content Include="Landing\icons\document162.png" />
+    <Content Include="Landing\icons\dollar178.png" />
+    <Content Include="Landing\icons\done.png" />
+    <Content Include="Landing\icons\door24.png" />
+    <Content Include="Landing\icons\down123.png" />
+    <Content Include="Landing\icons\down124.png" />
+    <Content Include="Landing\icons\download168.png" />
+    <Content Include="Landing\icons\expand42.png" />
+    <Content Include="Landing\icons\expand43.png" />
+    <Content Include="Landing\icons\eye106.png" />
+    <Content Include="Landing\icons\file96.png" />
+    <Content Include="Landing\icons\file99.png" />
+    <Content Include="Landing\icons\film63.png" />
+    <Content Include="Landing\icons\hanging15.png" />
+    <Content Include="Landing\icons\heart295.png" />
+    <Content Include="Landing\icons\heart297.png" />
+    <Content Include="Landing\icons\home150.png" />
+    <Content Include="Landing\icons\home153.png" />
+    <Content Include="Landing\icons\info22.png" />
+    <Content Include="Landing\icons\left arrow.png" />
+    <Content Include="Landing\icons\left224.png" />
+    <Content Include="Landing\icons\left225.png" />
+    <Content Include="Landing\icons\link61.png" />
+    <Content Include="Landing\icons\list90.png" />
+    <Content Include="Landing\icons\location44.png" />
+    <Content Include="Landing\icons\locked59.png" />
+    <Content Include="Landing\icons\locked61.png" />
+    <Content Include="Landing\icons\logout13.png" />
+    <Content Include="Landing\icons\mail80.png" />
+    <Content Include="Landing\icons\music235.png" />
+    <Content Include="Landing\icons\musical116.png" />
+    <Content Include="Landing\icons\navigation12.png" />
+    <Content Include="Landing\icons\new104.png" />
+    <Content Include="Landing\icons\old63.png" />
+    <Content Include="Landing\icons\pause46.png" />
+    <Content Include="Landing\icons\planet30.png" />
+    <Content Include="Landing\icons\print42.png" />
+    <Content Include="Landing\icons\print43.png" />
+    <Content Include="Landing\icons\print45.png" />
+    <Content Include="Landing\icons\puzzle38.png" />
+    <Content Include="Landing\icons\refresh57.png" />
+    <Content Include="Landing\icons\refresh62.png" />
+    <Content Include="Landing\icons\remove22.png" />
+    <Content Include="Landing\icons\return10.png" />
+    <Content Include="Landing\icons\returning7.png" />
+    <Content Include="Landing\icons\right arrow.png" />
+    <Content Include="Landing\icons\right245.png" />
+    <Content Include="Landing\icons\right247.png" />
+    <Content Include="Landing\icons\rocket74.png" />
+    <Content Include="Landing\icons\round60.png" />
+    <Content Include="Landing\icons\round61.png" />
+    <Content Include="Landing\icons\round62.png" />
+    <Content Include="Landing\icons\round75.png" />
+    <Content Include="Landing\icons\round77.png" />
+    <Content Include="Landing\icons\share40.png" />
+    <Content Include="Landing\icons\ship11.png" />
+    <Content Include="Landing\icons\smartphone24.png" />
+    <Content Include="Landing\icons\speaker111.png" />
+    <Content Include="Landing\icons\speaker112.png" />
+    <Content Include="Landing\icons\speaker113.png" />
+    <Content Include="Landing\icons\square182.png" />
+    <Content Include="Landing\icons\star174.png" />
+    <Content Include="Landing\icons\thumbtack1.png" />
+    <Content Include="Landing\icons\unlocked44.png" />
+    <Content Include="Landing\icons\unlocked46.png" />
+    <Content Include="Landing\icons\up177.png" />
+    <Content Include="Landing\icons\warning39.png" />
+    <Content Include="Landing\icons\widescreen9.png" />
+    <Content Include="Landing\icons\window58.png" />
+    <Content Include="Landing\icons\wrench73.png" />
+    <Content Include="Landing\icons\zoom70.png" />
+    <Content Include="Landing\icons\zoom71.png" />
+    <Content Include="Landing\icons\zoom72.png" />
+    <Content Include="Landing\index.html" />
+    <Content Include="Login\Images\landscape.jpg" />
+    <Content Include="Login\Images\landscapeblur.jpg" />
+    <Content Include="Login\Login.aspx" />
+    <Content Include="Login\LoginStyle.css" />
+    <Content Include="NBDModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NBDModel.edmx</DependentUpon>
+      <LastGenOutput>NBDModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NBDModel.edmx.diagram">
+      <DependentUpon>NBDModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="NBDModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NBDModel.edmx</DependentUpon>
+      <LastGenOutput>NBDModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="DesignBidDataSet.xsc">
+      <DependentUpon>DesignBidDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="DesignBidDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DesignBidDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DesignBidDataSet.xss">
+      <DependentUpon>DesignBidDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\NBD_SB.mdf" />
+    <Content Include="App_Data\NBD_SB_log.ldf">
+      <DependentUpon>NBD_SB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Register.aspx" />
+    <Content Include="Landing\slideShow.js" />
+    <Content Include="Landing\style.css" />
+    <Content Include="Multiview\main.css" />
+    <Content Include="Multiview\Template.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CITY.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENT.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DesignBidDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DesignBidDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LABOUR_REQUIREMENT.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LABOUR_SUMMARY.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIAL.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIAL_REQ.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NBDModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NBDModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NBDModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NBDModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NBDModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_TEAM.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_TOOL.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECT.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TASK.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TOOL.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Multiview\Template.aspx.cs">
+      <DependentUpon>Template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Multiview\Template.aspx.designer.cs">
+      <DependentUpon>Template.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WORKER.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WORKER_TYPE.cs">
+      <DependentUpon>NBDModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="DataClasses\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56145</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56145/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DesignBidDataSet" targetNamespace="http://tempuri.org/DesignBidDataSet.xsd" xmlns:mstns="http://tempuri.org/DesignBidDataSet.xsd" xmlns="http://tempuri.org/DesignBidDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="NBD_SBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NBD_SBConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.NBD_SBConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DesignBidTableAdapter" GeneratorDataComponentClassName="DesignBidTableAdapter" Name="DesignBid" UserDataComponentName="DesignBidTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NBD_SBConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CLIENT.cliName, CLIENT.cliAddress, CLIENT.cliProvince, CLIENT.cliPCode, CLIENT.cliPhone, CLIENT.cliConFName, CLIENT.cliConLName, CLIENT.cliConPosition, CITY.city, PROJECT.projName, 
+                         PROJECT.projSite, PROJECT.projBidDate, PROJECT.projEstStart, PROJECT.projEstEnd, PROJECT.projEstCost, MATERIAL.matDesc, MATERIAL.matType, MATERIAL_REQ.mreqEstQty, INVENTORY.invSizeUnit, 
+                         INVENTORY.invAvgNet, LABOUR_REQUIREMENT.lreqEstHours, WORKER_TYPE.wrkTypeDesc, WORKER_TYPE.wrkTypePrice
+FROM            PROJECT INNER JOIN
+                         MATERIAL_REQ ON PROJECT.ID = MATERIAL_REQ.projectID INNER JOIN
+                         INVENTORY ON MATERIAL_REQ.inventoryID = INVENTORY.ID INNER JOIN
+                         MATERIAL ON INVENTORY.materialID = MATERIAL.ID INNER JOIN
+                         CLIENT ON PROJECT.clientID = CLIENT.ID INNER JOIN
+                         CITY ON CLIENT.cityID = CITY.ID INNER JOIN
+                         PROD_TEAM ON PROJECT.ID = PROD_TEAM.projectID INNER JOIN
+                         WORKER ON PROJECT.designerID = WORKER.ID AND PROD_TEAM.workerID = WORKER.ID INNER JOIN
+                         LABOUR_REQUIREMENT ON PROD_TEAM.ID = LABOUR_REQUIREMENT.prodTeamID INNER JOIN
+                         WORKER_TYPE ON WORKER.wrkTypeID = WORKER_TYPE.ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cliName" DataSetColumn="cliName" />
+              <Mapping SourceColumn="cliAddress" DataSetColumn="cliAddress" />
+              <Mapping SourceColumn="cliProvince" DataSetColumn="cliProvince" />
+              <Mapping SourceColumn="cliPCode" DataSetColumn="cliPCode" />
+              <Mapping SourceColumn="cliPhone" DataSetColumn="cliPhone" />
+              <Mapping SourceColumn="cliConFName" DataSetColumn="cliConFName" />
+              <Mapping SourceColumn="cliConLName" DataSetColumn="cliConLName" />
+              <Mapping SourceColumn="cliConPosition" DataSetColumn="cliConPosition" />
+              <Mapping SourceColumn="city" DataSetColumn="city" />
+              <Mapping SourceColumn="projName" DataSetColumn="projName" />
+              <Mapping SourceColumn="projSite" DataSetColumn="projSite" />
+              <Mapping SourceColumn="projBidDate" DataSetColumn="projBidDate" />
+              <Mapping SourceColumn="projEstStart" DataSetColumn="projEstStart" />
+              <Mapping SourceColumn="projEstEnd" DataSetColumn="projEstEnd" />
+              <Mapping SourceColumn="projEstCost" DataSetColumn="projEstCost" />
+              <Mapping SourceColumn="matDesc" DataSetColumn="matDesc" />
+              <Mapping SourceColumn="matType" DataSetColumn="matType" />
+              <Mapping SourceColumn="mreqEstQty" DataSetColumn="mreqEstQty" />
+              <Mapping SourceColumn="invSizeUnit" DataSetColumn="invSizeUnit" />
+              <Mapping SourceColumn="invAvgNet" DataSetColumn="invAvgNet" />
+              <Mapping SourceColumn="lreqEstHours" DataSetColumn="lreqEstHours" />
+              <Mapping SourceColumn="wrkTypeDesc" DataSetColumn="wrkTypeDesc" />
+              <Mapping SourceColumn="wrkTypePrice" DataSetColumn="wrkTypePrice" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MatReqPlantTableAdapter" GeneratorDataComponentClassName="MatReqPlantTableAdapter" Name="MatReqPlant" UserDataComponentName="MatReqPlantTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NBD_SBConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        MATERIAL_REQ.mreqEstQty AS 'Qty', MATERIAL.matDesc AS 'Desc', INVENTORY.invSizeAmnt AS 'Size', INVENTORY.invSizeUnit AS 'Size (dim)', INVENTORY.invAvgNet AS 'Unit Price', 
+                         MATERIAL_REQ.mreqEstQty * INVENTORY.invAvgNet AS 'Extended Price', PROJECT.ID AS ProjID, MATERIAL_REQ.ID AS MatReqID, INVENTORY.ID AS InvID, MATERIAL.ID AS MatID
+FROM            PROJECT INNER JOIN
+                         MATERIAL_REQ ON PROJECT.ID = MATERIAL_REQ.projectID INNER JOIN
+                         INVENTORY ON MATERIAL_REQ.inventoryID = INVENTORY.ID INNER JOIN
+                         MATERIAL ON INVENTORY.materialID = MATERIAL.ID
+WHERE        (PROJECT.projName = @Param1) AND (MATERIAL.matType = @Param2)
+GROUP BY MATERIAL_REQ.mreqEstQty, MATERIAL.matDesc, INVENTORY.invSizeAmnt, INVENTORY.invSizeUnit, INVENTORY.invAvgNet, PROJECT.ID, MATERIAL_REQ.ID, INVENTORY.ID, MATERIAL.ID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="projName" DataSourceName="[C:\USERS\KYLE\DOCUMENTS\VISUAL STUDIO 2013\PROJECTS\DPCTRACKR\DPCTRACKR\APP_DATA\NBD_SB.MDF].dbo.PROJECT" DataTypeServer="nchar(100)" DbType="String" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="NChar" Scale="0" Size="100" SourceColumn="projName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="matType" DataSourceName="[C:\USERS\KYLE\DOCUMENTS\VISUAL STUDIO 2013\PROJECTS\DPCTRACKR\DPCTRACKR\APP_DATA\NBD_SB.MDF].dbo.MATERIAL" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@Param2" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="matType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Qty" DataSetColumn="Qty" />
+              <Mapping SourceColumn="Desc" DataSetColumn="Desc" />
+              <Mapping SourceColumn="Unit Price" DataSetColumn="Unit Price" />
+              <Mapping SourceColumn="Extended Price" DataSetColumn="Extended Price" />
+              <Mapping SourceColumn="Size" DataSetColumn="Size" />
+              <Mapping SourceColumn="Size (dim)" DataSetColumn="Size (dim)" />
+              <Mapping SourceColumn="ProjID" DataSetColumn="ProjID" />
+              <Mapping SourceColumn="MatReqID" DataSetColumn="MatReqID" />
+              <Mapping SourceColumn="InvID" DataSetColumn="InvID" />
+              <Mapping SourceColumn="MatID" DataSetColumn="MatID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LaborReqTableAdapter" GeneratorDataComponentClassName="LaborReqTableAdapter" Name="LaborReq" UserDataComponentName="LaborReqTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NBD_SBConnectionString (Web.config)" DbObjectName="dbo.WORKER_TYPE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SUM(LABOUR_REQUIREMENT.lreqEstHours) AS 'Hours', WORKER_TYPE.wrkTypeDesc AS 'Desc', WORKER_TYPE.wrkTypePrice AS 'Unit Price', SUM(LABOUR_REQUIREMENT.lreqEstHours)*WORKER_TYPE.wrkTypePrice AS 'Extended Price'
+FROM            PROJECT INNER JOIN
+                         MATERIAL_REQ ON PROJECT.ID = MATERIAL_REQ.projectID INNER JOIN
+                         INVENTORY ON MATERIAL_REQ.inventoryID = INVENTORY.ID INNER JOIN
+                         MATERIAL ON INVENTORY.materialID = MATERIAL.ID INNER JOIN
+                         CLIENT ON PROJECT.clientID = CLIENT.ID INNER JOIN
+                         CITY ON CLIENT.cityID = CITY.ID INNER JOIN
+                         PROD_TEAM ON PROJECT.ID = PROD_TEAM.projectID INNER JOIN
+                         WORKER ON PROJECT.designerID = WORKER.ID AND PROD_TEAM.workerID = WORKER.ID INNER JOIN
+                         LABOUR_REQUIREMENT ON PROD_TEAM.ID = LABOUR_REQUIREMENT.prodTeamID INNER JOIN
+                         WORKER_TYPE ON WORKER.wrkTypeID = WORKER_TYPE.ID
+WHERE        (PROJECT.projName = @Param1)
+GROUP BY PROJECT.projName, WORKER_TYPE.wrkTypeDesc, WORKER_TYPE.wrkTypePrice</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="projName" DataSourceName="[C:\USERS\KYLE\DOCUMENTS\VISUAL STUDIO 2013\PROJECTS\DPCTRACKR\DPCTRACKR\APP_DATA\NBD_SB.MDF].dbo.PROJECT" DataTypeServer="nchar(100)" DbType="String" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="NChar" Scale="0" Size="100" SourceColumn="projName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Hours" DataSetColumn="Hours" />
+              <Mapping SourceColumn="Desc" DataSetColumn="Desc" />
+              <Mapping SourceColumn="Unit Price" DataSetColumn="Unit Price" />
+              <Mapping SourceColumn="Extended Price" DataSetColumn="Extended Price" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProjectDataTableAdapter" GeneratorDataComponentClassName="ProjectDataTableAdapter" Name="ProjectData" UserDataComponentName="ProjectDataTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NBD_SBConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CLIENT.cliName, PROJECT.projName
+FROM            CLIENT INNER JOIN
+                         PROJECT ON CLIENT.ID = PROJECT.clientID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cliName" DataSetColumn="cliName" />
+              <Mapping SourceColumn="projName" DataSetColumn="projName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MATERIALTableAdapter" GeneratorDataComponentClassName="MATERIALTableAdapter" Name="MATERIAL" UserDataComponentName="MATERIALTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NBD_SBConnectionString (Web.config)" DbObjectName="dbo.MATERIAL" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [MATERIAL] WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [MATERIAL] ([matDesc], [matType]) VALUES (@matDesc, @matType)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@matDesc" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="matDesc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@matType" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="matType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID, matDesc, matType
+FROM            MATERIAL</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [MATERIAL] SET [matDesc] = @matDesc, [matType] = @matType WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@matDesc" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="matDesc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@matType" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="matType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="matDesc" DataSetColumn="matDesc" />
+              <Mapping SourceColumn="matType" DataSetColumn="matType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MATERIAL_REQTableAdapter" GeneratorDataComponentClassName="MATERIAL_REQTableAdapter" Name="MATERIAL_REQ" UserDataComponentName="MATERIAL_REQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NBD_SBConnectionString (Web.config)" DbObjectName="dbo.MATERIAL_REQ" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [MATERIAL_REQ] WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID, mreqEstQty
+FROM            MATERIAL_REQ</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [MATERIAL_REQ] SET [mreqEstQty] = @mreqEstQty WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@mreqEstQty" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="mreqEstQty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="mreqEstQty" DataSetColumn="mreqEstQty" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="INVENTORYTableAdapter" GeneratorDataComponentClassName="INVENTORYTableAdapter" Name="INVENTORY" UserDataComponentName="INVENTORYTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NBD_SBConnectionString (Web.config)" DbObjectName="dbo.INVENTORY" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [INVENTORY] WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [INVENTORY] ([invAvgNet], [invSizeAmnt], [invSizeUnit], [materialID]) VALUES (@invAvgNet, @invSizeAmnt, @invSizeUnit, @materialID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@invAvgNet" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="invAvgNet" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@invSizeAmnt" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="invSizeAmnt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@invSizeUnit" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="invSizeUnit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@materialID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="materialID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID, invAvgNet, invSizeAmnt, invSizeUnit, materialID
+FROM            INVENTORY</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [INVENTORY] SET [invAvgNet] = @invAvgNet, [invSizeAmnt] = @invSizeAmnt, [invSizeUnit] = @invSizeUnit, [materialID] = @materialID WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@invAvgNet" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="invAvgNet" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@invSizeAmnt" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="invSizeAmnt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@invSizeUnit" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="invSizeUnit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@materialID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="materialID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="invAvgNet" DataSetColumn="invAvgNet" />
+              <Mapping SourceColumn="invSizeAmnt" DataSetColumn="invSizeAmnt" />
+              <Mapping SourceColumn="invSizeUnit" DataSetColumn="invSizeUnit" />
+              <Mapping SourceColumn="materialID" DataSetColumn="materialID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CLIENTTableAdapter" GeneratorDataComponentClassName="CLIENTTableAdapter" Name="CLIENT" UserDataComponentName="CLIENTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NBD_SBConnectionString (Web.config)" DbObjectName="dbo.CLIENT" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [CLIENT] WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [CLIENT] ([cliName], [cliAddress], [cliProvince], [cliPCode], [cliPhone], [cliConFName], [cliConPosition], [cliConLName], [cityID]) VALUES (@cliName, @cliAddress, @cliProvince, @cliPCode, @cliPhone, @cliConFName, @cliConPosition, @cliConLName, @cityID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@cliName" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="cliName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@cliAddress" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="cliAddress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@cliProvince" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="cliProvince" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@cliPCode" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="cliPCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@cliPhone" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="cliPhone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@cliConFName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="cliConFName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@cliConPosition" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="cliConPosition" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@cliConLName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="cliConLName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@cityID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cityID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID, cliName, cliAddress, cliProvince, cliPCode, cliPhone, cliConFName, cliConPosition, cliConLName, cityID
+FROM            CLIENT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [CLIENT] SET [cliName] = @cliName, [cliAddress] = @cliAddress, [cliProvince] = @cliProvince, [cliPCode] = @cliPCode, [cliPhone] = @cliPhone, [cliConFName] = @cliConFName, [cliConPosition] = @cliConPosition, [cliConLName] = @cliConLName, [cityID] = @cityID WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@cliName" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="cliName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@cliAddress" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="cliAddress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@cliProvince" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="cliProvince" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@cliPCode" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="cliPCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@cliPhone" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="cliPhone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@cliConFName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="cliConFName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@cliConPosition" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="cliConPosition" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@cliConLName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="cliConLName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@cityID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cityID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="cliName" DataSetColumn="cliName" />
+              <Mapping SourceColumn="cliAddress" DataSetColumn="cliAddress" />
+              <Mapping SourceColumn="cliProvince" DataSetColumn="cliProvince" />
+              <Mapping SourceColumn="cliPCode" DataSetColumn="cliPCode" />
+              <Mapping SourceColumn="cliPhone" DataSetColumn="cliPhone" />
+              <Mapping SourceColumn="cliConFName" DataSetColumn="cliConFName" />
+              <Mapping SourceColumn="cliConPosition" DataSetColumn="cliConPosition" />
+              <Mapping SourceColumn="cliConLName" DataSetColumn="cliConLName" />
+              <Mapping SourceColumn="cityID" DataSetColumn="cityID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PROJECTTableAdapter" GeneratorDataComponentClassName="PROJECTTableAdapter" Name="PROJECT" UserDataComponentName="PROJECTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NBD_SBConnectionString (Web.config)" DbObjectName="dbo.PROJECT" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [PROJECT] WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID, projName, projSite, projBidDate, projEstStart, projEstEnd
+FROM            PROJECT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [PROJECT] SET [ID] = @ID, [projName] = @projName, [projSite] = @projSite, [projBidDate] = @projBidDate, [projEstStart] = @projEstStart, [projEstEnd] = @projEstEnd WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@projName" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="projName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@projSite" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="projSite" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@projBidDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="projBidDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@projEstStart" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="projEstStart" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@projEstEnd" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="projEstEnd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="projName" DataSetColumn="projName" />
+              <Mapping SourceColumn="projSite" DataSetColumn="projSite" />
+              <Mapping SourceColumn="projBidDate" DataSetColumn="projBidDate" />
+              <Mapping SourceColumn="projEstStart" DataSetColumn="projEstStart" />
+              <Mapping SourceColumn="projEstEnd" DataSetColumn="projEstEnd" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MATREQLASTIDTableAdapter" GeneratorDataComponentClassName="MATREQLASTIDTableAdapter" Name="MATREQLASTID" UserDataComponentName="MATREQLASTIDTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NBD_SBConnectionString (Web.config)" DbObjectName="dbo.MATERIAL_REQ" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID AS Expr1
+FROM            MATERIAL_REQ
+ORDER BY Expr1 DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DesignBidDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DesignBidDataSet" msprop:Generator_UserDSName="DesignBidDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DesignBid" msprop:Generator_TableClassName="DesignBidDataTable" msprop:Generator_TableVarName="tableDesignBid" msprop:Generator_RowChangedName="DesignBidRowChanged" msprop:Generator_TablePropName="DesignBid" msprop:Generator_RowDeletingName="DesignBidRowDeleting" msprop:Generator_RowChangingName="DesignBidRowChanging" msprop:Generator_RowEvHandlerName="DesignBidRowChangeEventHandler" msprop:Generator_RowDeletedName="DesignBidRowDeleted" msprop:Generator_RowClassName="DesignBidRow" msprop:Generator_UserTableName="DesignBid" msprop:Generator_RowEvArgName="DesignBidRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cliName" msprop:Generator_ColumnVarNameInTable="columncliName" msprop:Generator_ColumnPropNameInRow="cliName" msprop:Generator_ColumnPropNameInTable="cliNameColumn" msprop:Generator_UserColumnName="cliName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliAddress" msprop:Generator_ColumnVarNameInTable="columncliAddress" msprop:Generator_ColumnPropNameInRow="cliAddress" msprop:Generator_ColumnPropNameInTable="cliAddressColumn" msprop:Generator_UserColumnName="cliAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliProvince" msprop:Generator_ColumnVarNameInTable="columncliProvince" msprop:Generator_ColumnPropNameInRow="cliProvince" msprop:Generator_ColumnPropNameInTable="cliProvinceColumn" msprop:Generator_UserColumnName="cliProvince" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliPCode" msprop:Generator_ColumnVarNameInTable="columncliPCode" msprop:Generator_ColumnPropNameInRow="cliPCode" msprop:Generator_ColumnPropNameInTable="cliPCodeColumn" msprop:Generator_UserColumnName="cliPCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliPhone" msprop:Generator_ColumnVarNameInTable="columncliPhone" msprop:Generator_ColumnPropNameInRow="cliPhone" msprop:Generator_ColumnPropNameInTable="cliPhoneColumn" msprop:Generator_UserColumnName="cliPhone">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliConFName" msprop:Generator_ColumnVarNameInTable="columncliConFName" msprop:Generator_ColumnPropNameInRow="cliConFName" msprop:Generator_ColumnPropNameInTable="cliConFNameColumn" msprop:Generator_UserColumnName="cliConFName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliConLName" msprop:Generator_ColumnVarNameInTable="columncliConLName" msprop:Generator_ColumnPropNameInRow="cliConLName" msprop:Generator_ColumnPropNameInTable="cliConLNameColumn" msprop:Generator_UserColumnName="cliConLName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliConPosition" msprop:Generator_ColumnVarNameInTable="columncliConPosition" msprop:Generator_ColumnPropNameInRow="cliConPosition" msprop:Generator_ColumnPropNameInTable="cliConPositionColumn" msprop:Generator_UserColumnName="cliConPosition" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="city" msprop:Generator_ColumnVarNameInTable="columncity" msprop:Generator_ColumnPropNameInRow="city" msprop:Generator_ColumnPropNameInTable="cityColumn" msprop:Generator_UserColumnName="city">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="projName" msprop:Generator_ColumnVarNameInTable="columnprojName" msprop:Generator_ColumnPropNameInRow="projName" msprop:Generator_ColumnPropNameInTable="projNameColumn" msprop:Generator_UserColumnName="projName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="projSite" msprop:Generator_ColumnVarNameInTable="columnprojSite" msprop:Generator_ColumnPropNameInRow="projSite" msprop:Generator_ColumnPropNameInTable="projSiteColumn" msprop:Generator_UserColumnName="projSite">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="projBidDate" msprop:Generator_ColumnVarNameInTable="columnprojBidDate" msprop:Generator_ColumnPropNameInRow="projBidDate" msprop:Generator_ColumnPropNameInTable="projBidDateColumn" msprop:Generator_UserColumnName="projBidDate" type="xs:dateTime" />
+              <xs:element name="projEstStart" msprop:Generator_ColumnVarNameInTable="columnprojEstStart" msprop:Generator_ColumnPropNameInRow="projEstStart" msprop:Generator_ColumnPropNameInTable="projEstStartColumn" msprop:Generator_UserColumnName="projEstStart" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="projEstEnd" msprop:Generator_ColumnVarNameInTable="columnprojEstEnd" msprop:Generator_ColumnPropNameInRow="projEstEnd" msprop:Generator_ColumnPropNameInTable="projEstEndColumn" msprop:Generator_UserColumnName="projEstEnd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="projEstCost" msprop:Generator_ColumnVarNameInTable="columnprojEstCost" msprop:Generator_ColumnPropNameInRow="projEstCost" msprop:Generator_ColumnPropNameInTable="projEstCostColumn" msprop:Generator_UserColumnName="projEstCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="matDesc" msprop:Generator_ColumnVarNameInTable="columnmatDesc" msprop:Generator_ColumnPropNameInRow="matDesc" msprop:Generator_ColumnPropNameInTable="matDescColumn" msprop:Generator_UserColumnName="matDesc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="matType" msprop:Generator_ColumnVarNameInTable="columnmatType" msprop:Generator_ColumnPropNameInRow="matType" msprop:Generator_ColumnPropNameInTable="matTypeColumn" msprop:Generator_UserColumnName="matType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mreqEstQty" msprop:Generator_ColumnVarNameInTable="columnmreqEstQty" msprop:Generator_ColumnPropNameInRow="mreqEstQty" msprop:Generator_ColumnPropNameInTable="mreqEstQtyColumn" msprop:Generator_UserColumnName="mreqEstQty" type="xs:short" minOccurs="0" />
+              <xs:element name="invSizeUnit" msprop:Generator_ColumnVarNameInTable="columninvSizeUnit" msprop:Generator_ColumnPropNameInRow="invSizeUnit" msprop:Generator_ColumnPropNameInTable="invSizeUnitColumn" msprop:Generator_UserColumnName="invSizeUnit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="invAvgNet" msprop:Generator_ColumnVarNameInTable="columninvAvgNet" msprop:Generator_ColumnPropNameInRow="invAvgNet" msprop:Generator_ColumnPropNameInTable="invAvgNetColumn" msprop:Generator_UserColumnName="invAvgNet" type="xs:decimal" minOccurs="0" />
+              <xs:element name="lreqEstHours" msprop:Generator_ColumnVarNameInTable="columnlreqEstHours" msprop:Generator_ColumnPropNameInRow="lreqEstHours" msprop:Generator_ColumnPropNameInTable="lreqEstHoursColumn" msprop:Generator_UserColumnName="lreqEstHours" type="xs:short" minOccurs="0" />
+              <xs:element name="wrkTypeDesc" msprop:Generator_ColumnVarNameInTable="columnwrkTypeDesc" msprop:Generator_ColumnPropNameInRow="wrkTypeDesc" msprop:Generator_ColumnPropNameInTable="wrkTypeDescColumn" msprop:Generator_UserColumnName="wrkTypeDesc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="wrkTypePrice" msprop:Generator_ColumnVarNameInTable="columnwrkTypePrice" msprop:Generator_ColumnPropNameInRow="wrkTypePrice" msprop:Generator_ColumnPropNameInTable="wrkTypePriceColumn" msprop:Generator_UserColumnName="wrkTypePrice" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MatReqPlant" msprop:Generator_TableClassName="MatReqPlantDataTable" msprop:Generator_TableVarName="tableMatReqPlant" msprop:Generator_RowChangedName="MatReqPlantRowChanged" msprop:Generator_TablePropName="MatReqPlant" msprop:Generator_RowDeletingName="MatReqPlantRowDeleting" msprop:Generator_RowChangingName="MatReqPlantRowChanging" msprop:Generator_RowEvHandlerName="MatReqPlantRowChangeEventHandler" msprop:Generator_RowDeletedName="MatReqPlantRowDeleted" msprop:Generator_RowClassName="MatReqPlantRow" msprop:Generator_UserTableName="MatReqPlant" msprop:Generator_RowEvArgName="MatReqPlantRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:short" minOccurs="0" />
+              <xs:element name="Desc" msprop:Generator_ColumnVarNameInTable="columnDesc" msprop:Generator_ColumnPropNameInRow="Desc" msprop:Generator_ColumnPropNameInTable="DescColumn" msprop:Generator_UserColumnName="Desc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Unit_x0020_Price" msprop:Generator_ColumnVarNameInTable="columnUnit_Price" msprop:Generator_ColumnPropNameInRow="Unit_Price" msprop:Generator_ColumnPropNameInTable="Unit_PriceColumn" msprop:Generator_UserColumnName="Unit Price" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Extended_x0020_Price" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExtended_Price" msprop:Generator_ColumnPropNameInRow="Extended_Price" msprop:Generator_ColumnPropNameInTable="Extended_PriceColumn" msprop:Generator_UserColumnName="Extended Price" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Size" msprop:Generator_ColumnVarNameInTable="columnSize" msprop:Generator_ColumnPropNameInRow="Size" msprop:Generator_ColumnPropNameInTable="SizeColumn" msprop:Generator_UserColumnName="Size" type="xs:short" minOccurs="0" />
+              <xs:element name="Size_x0020__x0028_dim_x0029_" msprop:Generator_ColumnVarNameInTable="_columnSize__dim_" msprop:Generator_ColumnPropNameInRow="_Size__dim_" msprop:Generator_ColumnPropNameInTable="_Size__dim_Column" msprop:Generator_UserColumnName="Size (dim)" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjID" msprop:Generator_ColumnVarNameInTable="columnProjID" msprop:Generator_ColumnPropNameInRow="ProjID" msprop:Generator_ColumnPropNameInTable="ProjIDColumn" msprop:Generator_UserColumnName="ProjID" type="xs:int" />
+              <xs:element name="MatReqID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMatReqID" msprop:Generator_ColumnPropNameInRow="MatReqID" msprop:Generator_ColumnPropNameInTable="MatReqIDColumn" msprop:Generator_UserColumnName="MatReqID" type="xs:int" />
+              <xs:element name="InvID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnInvID" msprop:Generator_ColumnPropNameInRow="InvID" msprop:Generator_ColumnPropNameInTable="InvIDColumn" msprop:Generator_UserColumnName="InvID" type="xs:int" />
+              <xs:element name="MatID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMatID" msprop:Generator_ColumnPropNameInRow="MatID" msprop:Generator_ColumnPropNameInTable="MatIDColumn" msprop:Generator_UserColumnName="MatID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LaborReq" msprop:Generator_TableClassName="LaborReqDataTable" msprop:Generator_TableVarName="tableLaborReq" msprop:Generator_RowChangedName="LaborReqRowChanged" msprop:Generator_TablePropName="LaborReq" msprop:Generator_RowDeletingName="LaborReqRowDeleting" msprop:Generator_RowChangingName="LaborReqRowChanging" msprop:Generator_RowEvHandlerName="LaborReqRowChangeEventHandler" msprop:Generator_RowDeletedName="LaborReqRowDeleted" msprop:Generator_RowClassName="LaborReqRow" msprop:Generator_UserTableName="LaborReq" msprop:Generator_RowEvArgName="LaborReqRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Hours" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHours" msprop:Generator_ColumnPropNameInRow="Hours" msprop:Generator_ColumnPropNameInTable="HoursColumn" msprop:Generator_UserColumnName="Hours" type="xs:int" minOccurs="0" />
+              <xs:element name="Desc" msprop:Generator_ColumnVarNameInTable="columnDesc" msprop:Generator_ColumnPropNameInRow="Desc" msprop:Generator_ColumnPropNameInTable="DescColumn" msprop:Generator_UserColumnName="Desc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Unit_x0020_Price" msprop:Generator_ColumnVarNameInTable="columnUnit_Price" msprop:Generator_ColumnPropNameInRow="Unit_Price" msprop:Generator_ColumnPropNameInTable="Unit_PriceColumn" msprop:Generator_UserColumnName="Unit Price" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Extended_x0020_Price" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExtended_Price" msprop:Generator_ColumnPropNameInRow="Extended_Price" msprop:Generator_ColumnPropNameInTable="Extended_PriceColumn" msprop:Generator_UserColumnName="Extended Price" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProjectData" msprop:Generator_TableClassName="ProjectDataDataTable" msprop:Generator_TableVarName="tableProjectData" msprop:Generator_TablePropName="ProjectData" msprop:Generator_RowDeletingName="ProjectDataRowDeleting" msprop:Generator_RowChangingName="ProjectDataRowChanging" msprop:Generator_RowEvHandlerName="ProjectDataRowChangeEventHandler" msprop:Generator_RowDeletedName="ProjectDataRowDeleted" msprop:Generator_UserTableName="ProjectData" msprop:Generator_RowChangedName="ProjectDataRowChanged" msprop:Generator_RowEvArgName="ProjectDataRowChangeEvent" msprop:Generator_RowClassName="ProjectDataRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cliName" msprop:Generator_ColumnVarNameInTable="columncliName" msprop:Generator_ColumnPropNameInRow="cliName" msprop:Generator_ColumnPropNameInTable="cliNameColumn" msprop:Generator_UserColumnName="cliName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="projName" msprop:Generator_ColumnVarNameInTable="columnprojName" msprop:Generator_ColumnPropNameInRow="projName" msprop:Generator_ColumnPropNameInTable="projNameColumn" msprop:Generator_UserColumnName="projName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MATERIAL" msprop:Generator_TableClassName="MATERIALDataTable" msprop:Generator_TableVarName="tableMATERIAL" msprop:Generator_RowChangedName="MATERIALRowChanged" msprop:Generator_TablePropName="MATERIAL" msprop:Generator_RowDeletingName="MATERIALRowDeleting" msprop:Generator_RowChangingName="MATERIALRowChanging" msprop:Generator_RowEvHandlerName="MATERIALRowChangeEventHandler" msprop:Generator_RowDeletedName="MATERIALRowDeleted" msprop:Generator_RowClassName="MATERIALRow" msprop:Generator_UserTableName="MATERIAL" msprop:Generator_RowEvArgName="MATERIALRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="matDesc" msprop:Generator_ColumnVarNameInTable="columnmatDesc" msprop:Generator_ColumnPropNameInRow="matDesc" msprop:Generator_ColumnPropNameInTable="matDescColumn" msprop:Generator_UserColumnName="matDesc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="matType" msprop:Generator_ColumnVarNameInTable="columnmatType" msprop:Generator_ColumnPropNameInRow="matType" msprop:Generator_ColumnPropNameInTable="matTypeColumn" msprop:Generator_UserColumnName="matType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MATERIAL_REQ" msprop:Generator_TableClassName="MATERIAL_REQDataTable" msprop:Generator_TableVarName="tableMATERIAL_REQ" msprop:Generator_RowChangedName="MATERIAL_REQRowChanged" msprop:Generator_TablePropName="MATERIAL_REQ" msprop:Generator_RowDeletingName="MATERIAL_REQRowDeleting" msprop:Generator_RowChangingName="MATERIAL_REQRowChanging" msprop:Generator_RowEvHandlerName="MATERIAL_REQRowChangeEventHandler" msprop:Generator_RowDeletedName="MATERIAL_REQRowDeleted" msprop:Generator_RowClassName="MATERIAL_REQRow" msprop:Generator_UserTableName="MATERIAL_REQ" msprop:Generator_RowEvArgName="MATERIAL_REQRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="mreqEstQty" msprop:Generator_ColumnVarNameInTable="columnmreqEstQty" msprop:Generator_ColumnPropNameInRow="mreqEstQty" msprop:Generator_ColumnPropNameInTable="mreqEstQtyColumn" msprop:Generator_UserColumnName="mreqEstQty" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="INVENTORY" msprop:Generator_TableClassName="INVENTORYDataTable" msprop:Generator_TableVarName="tableINVENTORY" msprop:Generator_RowChangedName="INVENTORYRowChanged" msprop:Generator_TablePropName="INVENTORY" msprop:Generator_RowDeletingName="INVENTORYRowDeleting" msprop:Generator_RowChangingName="INVENTORYRowChanging" msprop:Generator_RowEvHandlerName="INVENTORYRowChangeEventHandler" msprop:Generator_RowDeletedName="INVENTORYRowDeleted" msprop:Generator_RowClassName="INVENTORYRow" msprop:Generator_UserTableName="INVENTORY" msprop:Generator_RowEvArgName="INVENTORYRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="invAvgNet" msprop:Generator_ColumnVarNameInTable="columninvAvgNet" msprop:Generator_ColumnPropNameInRow="invAvgNet" msprop:Generator_ColumnPropNameInTable="invAvgNetColumn" msprop:Generator_UserColumnName="invAvgNet" type="xs:decimal" minOccurs="0" />
+              <xs:element name="invSizeAmnt" msprop:Generator_ColumnVarNameInTable="columninvSizeAmnt" msprop:Generator_ColumnPropNameInRow="invSizeAmnt" msprop:Generator_ColumnPropNameInTable="invSizeAmntColumn" msprop:Generator_UserColumnName="invSizeAmnt" type="xs:short" minOccurs="0" />
+              <xs:element name="invSizeUnit" msprop:Generator_ColumnVarNameInTable="columninvSizeUnit" msprop:Generator_ColumnPropNameInRow="invSizeUnit" msprop:Generator_ColumnPropNameInTable="invSizeUnitColumn" msprop:Generator_UserColumnName="invSizeUnit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="materialID" msprop:Generator_ColumnVarNameInTable="columnmaterialID" msprop:Generator_ColumnPropNameInRow="materialID" msprop:Generator_ColumnPropNameInTable="materialIDColumn" msprop:Generator_UserColumnName="materialID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CLIENT" msprop:Generator_TableClassName="CLIENTDataTable" msprop:Generator_TableVarName="tableCLIENT" msprop:Generator_RowChangedName="CLIENTRowChanged" msprop:Generator_TablePropName="CLIENT" msprop:Generator_RowDeletingName="CLIENTRowDeleting" msprop:Generator_RowChangingName="CLIENTRowChanging" msprop:Generator_RowEvHandlerName="CLIENTRowChangeEventHandler" msprop:Generator_RowDeletedName="CLIENTRowDeleted" msprop:Generator_RowClassName="CLIENTRow" msprop:Generator_UserTableName="CLIENT" msprop:Generator_RowEvArgName="CLIENTRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="cliName" msprop:Generator_ColumnVarNameInTable="columncliName" msprop:Generator_ColumnPropNameInRow="cliName" msprop:Generator_ColumnPropNameInTable="cliNameColumn" msprop:Generator_UserColumnName="cliName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliAddress" msprop:Generator_ColumnVarNameInTable="columncliAddress" msprop:Generator_ColumnPropNameInRow="cliAddress" msprop:Generator_ColumnPropNameInTable="cliAddressColumn" msprop:Generator_UserColumnName="cliAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliProvince" msprop:Generator_ColumnVarNameInTable="columncliProvince" msprop:Generator_ColumnPropNameInRow="cliProvince" msprop:Generator_ColumnPropNameInTable="cliProvinceColumn" msprop:Generator_UserColumnName="cliProvince" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliPCode" msprop:Generator_ColumnVarNameInTable="columncliPCode" msprop:Generator_ColumnPropNameInRow="cliPCode" msprop:Generator_ColumnPropNameInTable="cliPCodeColumn" msprop:Generator_UserColumnName="cliPCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliPhone" msprop:Generator_ColumnVarNameInTable="columncliPhone" msprop:Generator_ColumnPropNameInRow="cliPhone" msprop:Generator_ColumnPropNameInTable="cliPhoneColumn" msprop:Generator_UserColumnName="cliPhone">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliConFName" msprop:Generator_ColumnVarNameInTable="columncliConFName" msprop:Generator_ColumnPropNameInRow="cliConFName" msprop:Generator_ColumnPropNameInTable="cliConFNameColumn" msprop:Generator_UserColumnName="cliConFName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliConPosition" msprop:Generator_ColumnVarNameInTable="columncliConPosition" msprop:Generator_ColumnPropNameInRow="cliConPosition" msprop:Generator_ColumnPropNameInTable="cliConPositionColumn" msprop:Generator_UserColumnName="cliConPosition" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliConLName" msprop:Generator_ColumnVarNameInTable="columncliConLName" msprop:Generator_ColumnPropNameInRow="cliConLName" msprop:Generator_ColumnPropNameInTable="cliConLNameColumn" msprop:Generator_UserColumnName="cliConLName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cityID" msprop:Generator_ColumnVarNameInTable="columncityID" msprop:Generator_ColumnPropNameInRow="cityID" msprop:Generator_ColumnPropNameInTable="cityIDColumn" msprop:Generator_UserColumnName="cityID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PROJECT" msprop:Generator_TableClassName="PROJECTDataTable" msprop:Generator_TableVarName="tablePROJECT" msprop:Generator_RowChangedName="PROJECTRowChanged" msprop:Generator_TablePropName="PROJECT" msprop:Generator_RowDeletingName="PROJECTRowDeleting" msprop:Generator_RowChangingName="PROJECTRowChanging" msprop:Generator_RowEvHandlerName="PROJECTRowChangeEventHandler" msprop:Generator_RowDeletedName="PROJECTRowDeleted" msprop:Generator_RowClassName="PROJECTRow" msprop:Generator_UserTableName="PROJECT" msprop:Generator_RowEvArgName="PROJECTRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="projName" msprop:Generator_ColumnVarNameInTable="columnprojName" msprop:Generator_ColumnPropNameInRow="projName" msprop:Generator_ColumnPropNameInTable="projNameColumn" msprop:Generator_UserColumnName="projName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="projSite" msprop:Generator_ColumnVarNameInTable="columnprojSite" msprop:Generator_ColumnPropNameInRow="projSite" msprop:Generator_ColumnPropNameInTable="projSiteColumn" msprop:Generator_UserColumnName="projSite">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="projBidDate" msprop:Generator_ColumnVarNameInTable="columnprojBidDate" msprop:Generator_ColumnPropNameInRow="projBidDate" msprop:Generator_ColumnPropNameInTable="projBidDateColumn" msprop:Generator_UserColumnName="projBidDate" type="xs:dateTime" />
+              <xs:element name="projEstStart" msprop:Generator_ColumnVarNameInTable="columnprojEstStart" msprop:Generator_ColumnPropNameInRow="projEstStart" msprop:Generator_ColumnPropNameInTable="projEstStartColumn" msprop:Generator_UserColumnName="projEstStart" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="projEstEnd" msprop:Generator_ColumnVarNameInTable="columnprojEstEnd" msprop:Generator_ColumnPropNameInRow="projEstEnd" msprop:Generator_ColumnPropNameInTable="projEstEndColumn" msprop:Generator_UserColumnName="projEstEnd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MATREQLASTID" msprop:Generator_TableClassName="MATREQLASTIDDataTable" msprop:Generator_TableVarName="tableMATREQLASTID" msprop:Generator_TablePropName="MATREQLASTID" msprop:Generator_RowDeletingName="MATREQLASTIDRowDeleting" msprop:Generator_RowChangingName="MATREQLASTIDRowChanging" msprop:Generator_RowEvHandlerName="MATREQLASTIDRowChangeEventHandler" msprop:Generator_RowDeletedName="MATREQLASTIDRowDeleted" msprop:Generator_UserTableName="MATREQLASTID" msprop:Generator_RowChangedName="MATREQLASTIDRowChanged" msprop:Generator_RowEvArgName="MATREQLASTIDRowChangeEvent" msprop:Generator_RowClassName="MATREQLASTIDRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Expr1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MatReqPlant" />
+      <xs:field xpath="mstns:ProjID" />
+      <xs:field xpath="mstns:MatReqID" />
+      <xs:field xpath="mstns:InvID" />
+      <xs:field xpath="mstns:MatID" />
+    </xs:unique>
+    <xs:unique name="MATERIAL_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MATERIAL" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="MATERIAL_REQ_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MATERIAL_REQ" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="INVENTORY_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:INVENTORY" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="CLIENT_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CLIENT" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="PROJECT_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PROJECT" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="MATREQLASTID_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MATREQLASTID" />
+      <xs:field xpath="mstns:Expr1" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_INVENTORY_MATERIAL" msdata:parent="MATERIAL" msdata:child="INVENTORY" msdata:parentkey="ID" msdata:childkey="materialID" msprop:Generator_UserChildTable="INVENTORY" msprop:Generator_ChildPropName="GetINVENTORYRows" msprop:Generator_UserRelationName="FK_INVENTORY_MATERIAL" msprop:Generator_ParentPropName="MATERIALRow" msprop:Generator_RelationVarName="relationFK_INVENTORY_MATERIAL" msprop:Generator_UserParentTable="MATERIAL" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

@@ -1,0 +1,73 @@
+﻿body {
+    margin:0;
+}
+.panels2{
+    display: inline-block;
+    margin-top: 0px;
+    width:50%;
+    clear:none;
+    float:left;
+}
+.nbd {
+    color:white ;
+    position: fixed;
+    right: 50%;
+    text-align:left;
+    font-family: 'Lobster', cursive;
+    
+    font-size:3em;
+   
+}
+
+
+
+.title{
+    color:#F6FCDC;
+    margin-left:15px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size:2em;
+   
+}
+.smallLabels{
+    clear:none;
+    font-size:1em;
+
+}
+.buttons{
+    display:inline-block;
+    margin:5px;
+    height: 100%;
+    
+}
+.buttons:hover{
+    background-color:#8D9D46;
+}
+.buttonlabels{
+    font-family:Arial;
+    font-size:14px;
+    font-weight:bolder;
+    text-align:center;
+}
+.buttonsContainer{
+    width:100%;
+    margin-top:0;
+    background-color:#DFEDA2;
+
+}
+
+.navMenu {
+    margin-bottom: 0px;
+}
+.wrapper{
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.TopBar{
+    width:100%;
+    margin:0;
+    background-color:#8D9D46;
+    padding:0;
+    margin-bottom:3px;
+
+}

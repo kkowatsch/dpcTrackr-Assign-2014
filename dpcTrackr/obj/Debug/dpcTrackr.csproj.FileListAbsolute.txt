@@ -1,0 +1,88 @@
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\dpcTrackr.dll.config
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\dpcTrackr.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\dpcTrackr.pdb
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\EntityFramework.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\EntityFramework.SqlServer.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Newtonsoft.Json.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Owin.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\EntityFramework.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\EntityFramework.SqlServer.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\bin\Newtonsoft.Json.xml
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\obj\Debug\dpcTrackr.dll
+C:\Users\Kyle\Documents\Visual Studio 2013\Projects\dpcTrackr\dpcTrackr\obj\Debug\dpcTrackr.pdb
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\dpcTrackr.dll.config
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\dpcTrackr.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\dpcTrackr.pdb
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\EntityFramework.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\EntityFramework.SqlServer.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Newtonsoft.Json.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Owin.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\EntityFramework.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\EntityFramework.SqlServer.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\bin\Newtonsoft.Json.xml
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\obj\Debug\dpcTrackr.dll
+C:\Users\Hector\Desktop\dpcTrackr\dpcTrackr\obj\Debug\dpcTrackr.pdb
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\dpcTrackr.dll.config
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\dpcTrackr.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\dpcTrackr.pdb
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\EntityFramework.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\EntityFramework.SqlServer.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Newtonsoft.Json.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Owin.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\EntityFramework.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\EntityFramework.SqlServer.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\bin\Newtonsoft.Json.xml
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\obj\Debug\dpcTrackr.csprojResolveAssemblyReference.cache
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\obj\Debug\dpcTrackr.dll
+C:\Users\Kayleigh\Desktop\dpcTrackr\dpcTrackr\obj\Debug\dpcTrackr.pdb
